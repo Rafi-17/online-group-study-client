@@ -6,9 +6,9 @@ const SubmitAssignment = () => {
     
     return (
         <div>
-            <div className="bg-[#F4F3F0] px-4 md:px-0 md:w-3/4 mx-auto py-16">
+            <div className="bg-[#F4F3F0] px-4 md:px-0  mx-auto py-16">
                 <h2 className="text-3xl md:text-5xl text-[#374151] text-center font-bold mb-8">Submit Assignment</h2>
-                <form onSubmit={handleSubmitAssignment} className='space-y-6'>
+                <form onSubmit={handleSubmitAssignment} className='space-y-6 md:w-3/4 mx-auto'>
                     {/* 1st row */}
                     <div className=" justify-evenly px-8 md:px-16 lg:px-28 gap-6">
                         <div className="form-control w-full lg:w-full">

@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { CiMenuKebab } from "react-icons/ci";
-import { useContext, useEffect, useState } from "react";
+import { useContext,  useState } from "react";
 import Swal from "sweetalert2";
 import logo from '../../../assets/webLogo.png'
 import { AuthContext } from "../../../Providers/AuthProvider";
@@ -8,18 +8,18 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { user, logout, loading } = useContext(AuthContext);
-  const [theme,setTheme]= useState('light')
-    useEffect(()=>{
-        if(theme==='dark'){
-            document.documentElement.classList.add('dark')
-        }
-        else{
-            document.documentElement.classList.remove('dark')
-        }
-    },[theme])
-    const handleThemeSwitch=()=>{
-        setTheme(theme==='dark'? 'light' : 'dark')
-    }
+//   const [theme,setTheme]= useState('light')
+    // useEffect(()=>{
+    //     if(theme==='dark'){
+    //         document.documentElement.classList.add('dark')
+    //     }
+    //     else{
+    //         document.documentElement.classList.remove('dark')
+    //     }
+    // },[theme])
+    // const handleThemeSwitch=()=>{
+    //     setTheme(theme==='dark'? 'light' : 'dark')
+    // }
 
   const handleLogout = () => {
     logout()
@@ -50,29 +50,44 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+{/* drop down nav */}
+    {
+        user ?
+    <>
+      <li tabIndex={0}>
+        <details>
+            <summary>Assignments</summary>
+        
+       
+            <ul className="w-52">
+                {
+                    user && <>
+                    <li><NavLink to="/createAssignment" className={({ isActive, isPending }) =>isPending ? "pending": isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>Create Assignment</NavLink></li>
+                    </>
+                }
+                <li><NavLink to="/assignments" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>All Assignments</NavLink>
+      </li>
       {
         user && <>
-          <li><NavLink to="/createAssignment" className={({ isActive, isPending }) =>isPending ? "pending": isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>Create Assignment</NavLink></li>
+          <li><NavLink to="/myAssignments" className={({ isActive, isPending }) =>isPending ? "pending": isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>My Assignment</NavLink></li>
         </>
       }
-      <li>
-        <NavLink
-            to="/assignments"
-            className={({ isActive, isPending }) =>
-            isPending
-                ? "pending"
-                : isActive
-                ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white"
-                : ""
-            }>Assignments</NavLink>
-      </li>
+      {
+        user && <>
+          <li><NavLink to="/submittedAssignments" className={({ isActive, isPending }) =>isPending ? "pending": isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>Submitted Assignment</NavLink></li>
+        </>
+      }
+                
+            </ul>
+            </details>
+        </li>
+        </>:
+        <li><NavLink to="/assignments" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>All Assignments</NavLink>
+        </li>
+        }
+        {/* end here */}
       
       <li><NavLink to="/register" className={({ isActive, isPending }) =>isPending ? "pending": isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>Register</NavLink></li>
-      {
-        user && <>
-          <li><NavLink to="/cart" className={({ isActive, isPending }) =>isPending ? "pending": isActive ? "underline md:no-underline bg-inherit md:bg-slate-800 md:py-[6px] px-3 font-semibold rounded-md text-cyan-600 md:text-white" : "" }>Cart</NavLink></li>
-        </>
-      }
     </>
   );
 
@@ -85,15 +100,15 @@ const Navbar = () => {
         </div>
 
         <ul
-          className={`md:grid md: grid-cols-3 lg:flex gap-2 lg:gap-6 text-center text-orange-500 font-semibold  md:text-lg bg-zinc-700 md:bg-inherit p-4 rounded-md order-last md:order-none absolute md:static right-7 duration-1000 ${
+          className={` menu lg:menu-horizontal  lg:flex gap-2 lg:gap-6 text-center text-orange-500 font-semibold  lg:text-lg bg-zinc-700 lg:bg-inherit p-4 rounded-md order-last lg:order-none absolute lg:static right-7 duration-1000 ${
             open ? "top-8" : "hidden"
 }`}
         >
           {navLinks}
-          {user? <li className="md:hidden">
+          {user? <li className="lg:hidden">
             <button onClick={handleLogout}>Logout</button>
           </li> :
-          <li className="md:hidden">
+          <li className="lg:hidden">
             <Link to="/login">Login</Link>
           </li>}
         </ul>
@@ -110,20 +125,20 @@ const Navbar = () => {
                       <img src={user.photoURL} />
                     </div>
                   </label>
-              <button onClick={handleLogout} className="bg-purple-500 py-2 px-4 text-lg rounded-sm text-white font-semibold hidden md:block">Logout</button>
+              <button onClick={handleLogout} className="bg-purple-500 py-2 px-4 text-lg rounded-sm text-white font-semibold hidden lg:block">Logout</button>
             </div>) :
             (
-              <Link to="/login"className="bg-slate-700 border py-2 px-4 text-lg rounded-sm text-white font-semibold hidden md:inline">Login</Link>
+              <Link to="/login"className="bg-slate-700 border py-2 px-4 text-lg rounded-sm text-white font-semibold hidden lg:inline">Login</Link>
             )
               }
             </>
           }
-          <input onClick={handleThemeSwitch} type="checkbox" className="toggle ml-2" />
+          {/* <input onClick={handleThemeSwitch} type="checkbox" className="toggle ml-2" /> */}
         </div>
 
         <div
           onClick={() => setOpen(!open)}
-          className={`md:hidden order-last md:order-none`}
+          className={`lg:hidden order-last lg:order-none`}
         >
           <CiMenuKebab></CiMenuKebab>
         </div>
