@@ -42,32 +42,32 @@ const router = createBrowserRouter([
         {
             path: '/assignments',
             element: <Assignments></Assignments>,
-            loader: ()=>axios.get('http://localhost:5000/assignments')
+            loader: ()=>axios.get('https://online-group-study-server-sand.vercel.app/assignments')
         },
         {
             path: '/updateAssignment/:id',
             element: <UpdateAssignment></UpdateAssignment>,
-            loader: ({params})=>axios.get(`http://localhost:5000/assignment/${params.id}`)
+            loader: ({params})=>axios.get(`https://online-group-study-server-sand.vercel.app/assignment/${params.id}`)
         },
         {
             path: '/viewAssignment/:id',
             element: <PrivateRoute><ViewAssignment></ViewAssignment></PrivateRoute>,
-            loader: ({params})=>axios.get(`http://localhost:5000/assignment/${params.id}`)
+            loader: ({params})=>axios.get(`https://online-group-study-server-sand.vercel.app/assignment/${params.id}`)
         },
         {
             path: '/submitAssignment/:id',
             element: <PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
-            loader: ({params})=>axios.get(`http://localhost:5000/assignment/${params.id}`)
+            loader: ({params})=>axios.get(`https://online-group-study-server-sand.vercel.app/assignment/${params.id}`)
         },
         {
             path: '/submittedAssignments',
             element: <PrivateRoute><SubmittedAssignments></SubmittedAssignments></PrivateRoute>,
-            loader: ()=> axios.get("http://localhost:5000/submittedAssignments?status=pending")
+            loader: ()=> axios.get("https://online-group-study-server-sand.vercel.app/submittedAssignments?status=pending")
         },
         {
             path:'/giveMark/:id',
             element:<GiveMark></GiveMark>,
-            loader:({params})=> axios.get(`http://localhost:5000/submittedAssignment/${params.id}`)   
+            loader:({params})=> axios.get(`https://online-group-study-server-sand.vercel.app/submittedAssignment/${params.id}`)   
         },
         {
             path:'/myAssignments',

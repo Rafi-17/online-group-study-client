@@ -50,7 +50,7 @@ const CreateAssignment = () => {
         const newAssignment={title, difficulty, marks, photo, description, dueDate, email};
         // console.log(newAssignment);
 
-        axios.post('http://localhost:5000/assignments',newAssignment)
+        axios.post('https://online-group-study-server-sand.vercel.app/assignments',newAssignment)
         .then(res=>{
             console.log(res.data);
             if(res.data.insertedId){

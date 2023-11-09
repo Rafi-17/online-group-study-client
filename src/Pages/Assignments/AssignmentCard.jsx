@@ -25,7 +25,7 @@ const AssignmentCard = ({assignment, assignments, setAssignments}) => {
     }
     const hanldeDelete=(id)=>{
         if(user?.email === email){
-            axios.delete(`http://localhost:5000/assignment/${id}`)
+            axios.delete(`https://online-group-study-server-sand.vercel.app/assignment/${id}`)
             .then(res=>{
                 if(res.data.deletedCount>0){
                     Swal.fire({

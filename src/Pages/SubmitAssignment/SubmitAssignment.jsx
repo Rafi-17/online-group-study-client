@@ -23,7 +23,7 @@ const SubmitAssignment = () => {
         const newSubmittedAssignment= {pdfLink, note, email, title, marks, name, status:'pending', obtainedMark, feedback };
         console.log(newSubmittedAssignment);
 
-        axios.post('http://localhost:5000/submittedAssignments', newSubmittedAssignment)
+        axios.post('https://online-group-study-server-sand.vercel.app/submittedAssignments', newSubmittedAssignment)
         .then(res=>{
             console.log(res.data);
             if(res.data.insertedId){

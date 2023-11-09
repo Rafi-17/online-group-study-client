@@ -16,7 +16,7 @@ const GiveMark = () => {
             feedback: e.target.feedback.value
         }
 
-        axios.patch(`http://localhost:5000/submittedAssignment/${_id}`,checkedAssignment)
+        axios.patch(`https://online-group-study-server-sand.vercel.app/submittedAssignment/${_id}`,checkedAssignment)
         .then(res=>{
             if(res.data.modifiedCount>0){
                 Swal.fire({
