@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 
 const MyAssignmentsRow = ({assignment}) => {
-    const {title, marks, status, _id, obtainedMark, feedback }= assignment;
+    const {title, marks, status, obtainedMark, feedback }= assignment;
     return (
         <tr>
       <td>

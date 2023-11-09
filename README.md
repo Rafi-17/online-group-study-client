@@ -1,3 +1,5 @@
+## Live site: https://online-group-study-7bd82.web.app/
+
 # Project Features
 * This project is a online group study website. The name of the website is StudyElegance. Here are 5 sections in homepage. These are: navbar, banner, features, faq, footer. In feature section user can know more about the website and can also know the most asked questions from faq section.
 * There is a registration and login option in this website. User can use email and password or google login. Loggedin user can create assignments and submit assignments.
