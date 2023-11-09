@@ -23,6 +23,30 @@ const CreateAssignment = () => {
         const dueDate=date;
         const email=user.email;
 
+        if(difficulty==='Select Difficulty'){
+            return Swal.fire({
+                title: 'Error!',
+                text: 'Please select a difficulty',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+        }
+        if(!dueDate){
+            return Swal.fire({
+                title: 'Error!',
+                text: 'Please select due date',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+        }
+        if(typeof(marks)!=='number' || marks<=0){
+            return Swal.fire({
+                title: 'Error!',
+                text: 'Please enter valid number',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+        }
         const newAssignment={title, difficulty, marks, photo, description, dueDate, email};
         // console.log(newAssignment);
 
@@ -92,7 +116,7 @@ const CreateAssignment = () => {
                             <label className="label">
                                 <span className="label-text text-black text-xl font-semibold mb-2">Due date</span>
                             </label>
-                            <ReactDatePicker className="input input-bordered rounded-md w-full bg-white" required
+                            <ReactDatePicker className="input input-bordered rounded-md w-full bg-white" 
                                 placeholderText="Choose a date"
                                 selected={date}
                                 // onSelect={handleDateSelect}
