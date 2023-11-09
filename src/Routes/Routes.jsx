@@ -12,8 +12,11 @@ import axios from "axios";
 import UpdateAssignment from "../Pages/UpdateAssignment/UpdateAssignment";
 import ViewAssignment from "../Pages/ViewAssignment/ViewAssignment";
 import SubmitAssignment from "../Pages/SubmitAssignment/SubmitAssignment";
+import SubmittedAssignments from "../Pages/SubmittedAssignments/SubmittedAssignments";
+import GiveMark from "../Pages/GiveMark/GiveMark";
+import MyAssignments from "../Pages/MyAssignments/MyAssignments";
 
-  const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
@@ -54,6 +57,21 @@ import SubmitAssignment from "../Pages/SubmitAssignment/SubmitAssignment";
         {
             path: '/submitAssignment/:id',
             element: <PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
+            loader: ({params})=>axios.get(`http://localhost:5000/assignment/${params.id}`)
+        },
+        {
+            path: '/submittedAssignments',
+            element: <PrivateRoute><SubmittedAssignments></SubmittedAssignments></PrivateRoute>,
+            loader: ()=> axios.get("http://localhost:5000/submittedAssignments?status=pending")
+        },
+        {
+            path:'/giveMark/:id',
+            element:<GiveMark></GiveMark>,
+            loader:({params})=> axios.get(`http://localhost:5000/submittedAssignment/${params.id}`)   
+        },
+        {
+            path:'/myAssignments',
+            element:<MyAssignments></MyAssignments>, 
         },
       ]
     },
