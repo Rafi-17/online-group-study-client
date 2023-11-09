@@ -8,7 +8,7 @@ const SubmittedAssignments = () => {
     console.log(allSubmittedAssigments); 
     return (
         <div>
-      <h2 className="text-5xl font-bold text-center my-10">
+      <h2 className="text-3xl md:text-5xl font-bold text-center my-10">
         Total pending assignments: {allSubmittedAssigments.length}
       </h2>
     <div className="overflow-x-auto">

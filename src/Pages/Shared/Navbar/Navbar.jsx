@@ -54,7 +54,7 @@ const Navbar = () => {
     {
         user ?
     <>
-      <li tabIndex={0}>
+      <li tabIndex={0} className="z-10">
         <details>
             <summary>Assignments</summary>
         
