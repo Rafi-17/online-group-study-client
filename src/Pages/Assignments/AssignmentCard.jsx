@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 const AssignmentCard = ({assignment, assignments, setAssignments}) => {
     const {user} = useContext(AuthContext);
-    const {photo, title, marks, _id, difficulty, email}= assignment;
+    const {photo, title, marks, _id, difficulty, email, dueDate}= assignment;
     const navigate= useNavigate();
     const hanldeUpdate=()=>{
         if(user?.email === email){
@@ -67,6 +67,7 @@ const AssignmentCard = ({assignment, assignments, setAssignments}) => {
                 <div className="space-y-1">
                     <h2 className="font-semibold"><span className="font-bold text-violet-500 text-lg">Assignment Name:</span> {title}</h2>
                     <p className="font-semibold"><span className="font-bold text-violet-500 text-lg">Total Marks:</span> {marks}</p>
+                    <p className="font-semibold"><span className="font-bold text-violet-500 text-lg">Due Date:</span> {dueDate.slice(0,10)}</p>
                     
                 </div>
             </div>

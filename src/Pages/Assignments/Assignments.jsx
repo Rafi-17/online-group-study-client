@@ -4,9 +4,10 @@ import { useState } from "react";
 
 const Assignments = () => {
     const [selected, setSelected]= useState('All');
-    const res= useLoaderData();
+    const res=useLoaderData();
     const allAssignments=res.data;
     const [assignments,setAssignments]= useState(allAssignments);
+
     let filteredAssignments=[];
     const handleSelected=()=>{
         setSelected(document.getElementById('filter').value);
