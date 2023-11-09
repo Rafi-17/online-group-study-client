@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
     const { login, setLoading, googleLogin } = useContext(AuthContext);
@@ -26,6 +27,14 @@ const Login = () => {
                 icon:'success',
                 confirmButtonText: 'Cool'
               })
+              const user={email};
+              axios.post('http://localhost:5000/jwt',user, {withCredentials: true} )
+            .then(res=>{
+                console.log('response token',res.data);
+                if(res.data.success){
+                    navigate(location?.state ? location.state : '/',{replace:true});
+                }
+            })
             navigate('/');
           })
           .catch((error) => {
