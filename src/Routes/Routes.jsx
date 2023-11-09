@@ -15,11 +15,13 @@ import SubmitAssignment from "../Pages/SubmitAssignment/SubmitAssignment";
 import SubmittedAssignments from "../Pages/SubmittedAssignments/SubmittedAssignments";
 import GiveMark from "../Pages/GiveMark/GiveMark";
 import MyAssignments from "../Pages/MyAssignments/MyAssignments";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path: '/',
