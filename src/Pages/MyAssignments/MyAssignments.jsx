@@ -8,12 +8,13 @@ const MyAssignments = () => {
     const {user}= useContext(AuthContext);
     const url=`https://online-group-study-server-sand.vercel.app/submittedAssignment?email=${user?.email}`
     useEffect(()=>{
-        axios.get(url, {withCredentials:true})
+        axios.get(url)
         .then(res=>{
             console.log(res.data);
             setMyAssignments(res.data)
         })
     },[url])
+    console.log(myAssignments);
 
     return (
         <div className="overflow-x-auto">
