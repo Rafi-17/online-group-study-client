@@ -8,7 +8,7 @@ const MyAssignments = () => {
     const {user}= useContext(AuthContext);
     const url=`http://localhost:5000/submittedAssignment?email=${user?.email}`
     useEffect(()=>{
-        axios.get(url)
+        axios.get(url, {withCredentials:true})
         .then(res=>{
             console.log(res.data);
             setMyAssignments(res.data)
