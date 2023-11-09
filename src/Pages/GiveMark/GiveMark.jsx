@@ -15,6 +15,7 @@ const GiveMark = () => {
             obtainedMark: e.target.givenMark.value,
             feedback: e.target.feedback.value
         }
+        
 
         axios.patch(`https://online-group-study-server-sand.vercel.app/submittedAssignment/${_id}`,checkedAssignment)
         .then(res=>{

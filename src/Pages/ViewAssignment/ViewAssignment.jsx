@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const ViewAssignment = () => {
     const res=useLoaderData();
     const {title, photo, marks, difficulty, description, _id}= res.data;
+
     return (
         <div className="mt-10">
             <div className="md:flex py-8 px-4 gap-8 relative bg-gray-800 rounded">
