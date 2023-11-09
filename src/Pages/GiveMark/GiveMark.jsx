@@ -10,8 +10,13 @@ const GiveMark = () => {
 
     const handleGiveMark=e=>{
         e.preventDefault();
+        const checkedAssignment={
+            status:'completed',
+            obtainedMark: e.target.givenMark.value,
+            feedback: e.target.feedback.value
+        }
 
-        axios.patch(`http://localhost:5000/submittedAssignment/${_id}`,{status:'completed'})
+        axios.patch(`http://localhost:5000/submittedAssignment/${_id}`,checkedAssignment)
         .then(res=>{
             if(res.data.modifiedCount>0){
                 Swal.fire({

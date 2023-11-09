@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "image": "https://img.freepik.com/free-photo/medium-shot-woman-portrait-with-graduation-cap_23-2150293721.jpg?w=740&t=st=1699515069~exp=1699515669~hmac=a1e8bd73e1eff1601ddc5e54f1c312eb2c3b580dd1fe289c63d0c6c3701e9034",
+      "heading": "Personalized Learning Paths",
+      "description": "Tailor-made study plans based on individual learning styles and goals."
+    },
+    {
+      "id": 2,
+      "image": "https://img.freepik.com/free-vector/business-background-design_1300-343.jpg?w=740&t=st=1699515633~exp=1699516233~hmac=a72702a732b50d99dc93a9c22db5d5cb6fdcc7478d54dd99e48ba85c045b2cca",
+      "heading": "Interactive Study Guides",
+      "description": "Engaging multimedia study guides that make learning visually appealing and effective."
+    },
+    {
+      "id": 3,
+      "image": "https://img.freepik.com/free-photo/graphic-designers-working-their-desk_1170-1892.jpg?w=996&t=st=1699515694~exp=1699516294~hmac=890de5493a85a2cdd4f448e6c8ad876f3aed5a7067d029a9f689eb2bb0cf9707",
+      "heading": "Collaborative Study Spaces",
+      "description": "Virtual study rooms and forums for students to collaborate, discuss, and share insights."
+    },
+    {
+      "id": 4,
+      "image": "https://img.freepik.com/free-vector/isometric-running-mobile-app-infographic_52683-14360.jpg?w=740&t=st=1699515738~exp=1699516338~hmac=0111e283c33a44e82d21587e2ef7c13fde0348adb534eaba3da14c721db50074",
+      "heading": "Smart Progress Tracking",
+      "description": "Intuitive progress trackers to monitor and celebrate academic achievements."
+    },
+    {
+      "id": 5,
+      "image": "https://img.freepik.com/free-vector/gradient-golden-luxury-frame-template_23-2149026267.jpg?w=996&t=st=1699515777~exp=1699516377~hmac=3fe4f66e393c841be66795556ba0cdd3cf8461d7b83033d052e58de936f4c5c5",
+      "heading": "Elegant Design Themes",
+      "description": "Aesthetic and user-friendly design themes that create a visually pleasing environment for studying."
+    },
+    {
+      "id": 6,
+      "image": "https://img.freepik.com/free-photo/top-view-lit-light-bulb-paper-balls_1232-671.jpg?w=996&t=st=1699515815~exp=1699516415~hmac=d8638f0e55908cb5685bb81137cb1c07d6ec3ee67e76a4376fd9fac97a8e722c",
+      "heading": "Innovative Note-Taking Tools",
+      "description": "Modern note-taking features, such as voice-to-text, drawing, and organization options."
+    }
+  ]
+  

@@ -18,7 +18,9 @@ const SubmitAssignment = () => {
         const note=form.note.value;
         const email= user?.email;
         const name=user?.displayName;
-        const newSubmittedAssignment= {pdfLink, note, email, title, marks, name, status:'pending'};
+        const obtainedMark='Not Given';
+        const feedback='Not Given';
+        const newSubmittedAssignment= {pdfLink, note, email, title, marks, name, status:'pending', obtainedMark, feedback };
         console.log(newSubmittedAssignment);
 
         axios.post('http://localhost:5000/submittedAssignments', newSubmittedAssignment)

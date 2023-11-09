@@ -1,7 +1,13 @@
+import Banner from "../Banner/Banner";
+import Faq from "../FAQ/FAQ";
+import Features from "../Features/Features";
+
 const Home = () => {
     return (
         <div>
-            This is home
+            <Banner></Banner>
+            <Features></Features>
+            <Faq></Faq>
         </div>
     );
 };
